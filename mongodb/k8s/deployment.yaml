@@ -29,6 +29,10 @@ spec:
         volumeMounts:
         - name: mongodb-data
           mountPath: /data/db
+      volumes:  # Add this section
+      - name: mongodb-data
+        persistentVolumeClaim:
+          claimName: mongodb-pvc
 
 ---
 apiVersion: v1
